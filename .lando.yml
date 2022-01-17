@@ -11,19 +11,24 @@ services:
     type: compose
     services:
       image: selenium/standalone-chrome
+      hostname: chrome
       user: root
       ports:
         - "4444:4444"
       volumes: 
         - /dev/shm:/dev/shm
       command: /opt/bin/entry_point.sh
+proxy:
+  appserver:
+    - localhost:49177
+  selenium:
+    - localhost:4444
 tooling:
   composer:
     service: appserver
     description: Run composer commands
     cmd:
       - composer
-      - --ansi
   behat:
     service: appserver
     cmd:

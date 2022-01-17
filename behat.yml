@@ -5,13 +5,14 @@ default:
         features: features
         bootstrap: 'features/bootstrap'
       contexts:
-        - Behat\MinkExtension\Context\MinkContext
+        - FeatureContext
   extensions:
     Behat\MinkExtension:
       goutte: ~
-      selenium2:
-        browser: chrome
-        wd_host: http://localhost:4444
+      selenium2: 
+        wd_host: http://selenium:4444
+        capabilities: 
+          marionette: true
       browser_name: chrome
       default_session: selenium2
-      base_url: http://localhost:49177/wd/hub
+      base_url: http://appserver:80

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "57695c64698c1ab5e0a35902ddd89816",
+    "content-hash": "447e62cc93360d120c5ade90e5031378",
     "packages": [],
     "packages-dev": [
         {
@@ -412,16 +412,16 @@
         },
         {
             "name": "behat/mink-selenium2-driver",
-            "version": "dev-master",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/minkphp/MinkSelenium2Driver.git",
-                "reference": "369c0874c91b433de3094441b01d8a30bf2bfd2e"
+                "reference": "0dee8cceed7e198bf130b4af0fab0ffab6dab47f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/minkphp/MinkSelenium2Driver/zipball/369c0874c91b433de3094441b01d8a30bf2bfd2e",
-                "reference": "369c0874c91b433de3094441b01d8a30bf2bfd2e",
+                "url": "https://api.github.com/repos/minkphp/MinkSelenium2Driver/zipball/0dee8cceed7e198bf130b4af0fab0ffab6dab47f",
+                "reference": "0dee8cceed7e198bf130b4af0fab0ffab6dab47f",
                 "shasum": ""
             },
             "require": {
@@ -432,7 +432,6 @@
             "require-dev": {
                 "mink/driver-testsuite": "dev-master"
             },
-            "default-branch": true,
             "type": "mink-driver",
             "extra": {
                 "branch-alias": {
@@ -472,9 +471,9 @@
             ],
             "support": {
                 "issues": "https://github.com/minkphp/MinkSelenium2Driver/issues",
-                "source": "https://github.com/minkphp/MinkSelenium2Driver/tree/master"
+                "source": "https://github.com/minkphp/MinkSelenium2Driver/tree/v1.5.0"
             },
-            "time": "2021-12-10T11:39:37+00:00"
+            "time": "2021-10-12T16:01:47+00:00"
         },
         {
             "name": "behat/transliterator",
@@ -3028,8 +3027,7 @@
     "stability-flags": {
         "behat/behat": 20,
         "behat/mink": 20,
-        "behat/mink-extension": 20,
-        "behat/mink-selenium2-driver": 20
+        "behat/mink-extension": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
