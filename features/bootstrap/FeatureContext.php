@@ -20,4 +20,29 @@ class FeatureContext extends MinkContext implements Context
     public function __construct()
     {
     }
+
+    /**
+     * @BeforeScenario
+     */
+    public function before($event)
+    {
+        $this->visitPath('/');
+        $this->getSession()->maximizeWindow();
+    }
+
+    /**
+     * @When I wait :arg1 seconds
+     */
+    public function iWaitSeconds($arg1)
+    {
+        sleep($arg1);
+    }
+
+    /**
+     * @Transform :count
+     */
+    public function castStringToNumber($string)
+    {
+        return intval($string);
+    }
 }

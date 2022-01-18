@@ -9,10 +9,27 @@ default:
   extensions:
     Behat\MinkExtension:
       goutte: ~
-      selenium2: 
-        wd_host: http://selenium:4444
+      selenium2:
+        browser: chrome
+        wd_host: http://localhost:4444
         capabilities: 
           marionette: true
+          # Não funcionou :-(
+
+          # extra_capabilities:
+          #   chromeOptions:
+          #     args:
+          #       - "--start-maximized"
+          #       - "--start-fullscreen"
+          #       - "--window-size=1500,500"
+
+          # Não funcionou :-(
+            
+          # chrome:
+          #   switches:
+          #     - "--start-maximized"
+          #     - "--start-fullscreen"
+          #     - "--window-size=1200,600"
       browser_name: chrome
       default_session: selenium2
-      base_url: http://appserver:80
+      base_url: http://automationpractice.com
