@@ -64,8 +64,7 @@
         }
     },
     "require-dev": {
-        "behat/behat": "^3.10",
-        "behat/mink": "^1.9",
-        "behat/mink-extension": "^2.3"
+        "drupal/coder": "^8.3",
+        "drupal/drupal-extension": "^4.1"
     }
 }

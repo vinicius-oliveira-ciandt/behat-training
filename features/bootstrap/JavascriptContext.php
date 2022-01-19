@@ -1,14 +1,12 @@
 <?php
 
 use Behat\Behat\Context\Context;
-use Behat\Gherkin\Node\PyStringNode;
-use Behat\Gherkin\Node\TableNode;
 use Drupal\DrupalExtension\Context\RawDrupalContext;
 
 /**
  * Defines application features from the specific context.
  */
-class FeatureContext extends RawDrupalContext implements Context {
+class JavascriptContext extends RawDrupalContext implements Context {
 
   /**
    * Initializes context.
@@ -21,11 +19,18 @@ class FeatureContext extends RawDrupalContext implements Context {
   }
 
   /**
-   * @Given I click on contact button
    */
-  public function iClickOnContactButton() {
-    $page = $this->getSession()->getPage();
-    $page->find('css', 'a[href="/en/contact"]')->click();
+  public function scrollAndLink($cssSelector) {
+    $function = <<<JS
+      (
+        function()
+        {
+          document.querySelector("$cssSelector").scrollIntoView();
+        }
+      )
+    JS;
+    $this->getSession()->executeScript($function);
+
   }
 
 }
