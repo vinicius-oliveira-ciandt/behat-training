@@ -1,1 +1,0 @@
-<a href="/#">Sign in</a>

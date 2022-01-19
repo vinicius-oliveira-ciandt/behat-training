@@ -1,34 +1,9 @@
-name: Behat Training
-services:
-  appserver:
-    type: php
-    via: apache
-    ssl: true
-    composer: []
-    build:
-      - composer install
-  selenium:
-    type: compose
-    services:
-      image: selenium/standalone-chrome
-      hostname: chrome
-      user: root
-      ports:
-        - "4444:4444"
-      volumes: 
-        - /dev/shm:/dev/shm
-      command: /opt/bin/entry_point.sh
-proxy:
-  appserver:
-    - localhost:49177
-  selenium:
-    - localhost:4444
+name: behat_drupal
+recipe: drupal9
+config:
+  webroot: /docroot
+
 tooling:
-  composer:
-    service: appserver
-    description: Run composer commands
-    cmd:
-      - composer
   behat:
     service: appserver
     cmd:

@@ -1,2 +1,0 @@
-# behat-training
-Behat training
