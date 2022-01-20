@@ -5,6 +5,7 @@ default:
         features: features
         bootstrap: 'features/bootstrap'
       contexts:
+        - BrowserContext
         - ContactUsContext
         - FeatureContext
         - JavascriptContext
@@ -14,14 +15,40 @@ default:
         - Drupal\DrupalExtension\Context\DrushContext
   extensions:
     Behat\MinkExtension:
-      base_url: http://localhost:80
-      goutte: ~
+      base_url: http://behat_drupal.lndo.site/
+      browser_name: chrome
+      selenium2:
+        browser: chrome
+        wd_host: http://selenium:4444/wd/hub
+        capabilities:
+          browser: "chrome"
+          version: "*"
+          marionette: true
+          extra_capabilities:
+            chromeOptions:
+              args:
+                - "--start-maximized"
+                - "--start-fullscreen"
+              w3c: false
+
     Drupal\DrupalExtension:
       blackbox: ~
       region_map:
         header: ".layout-header"
         footer: ".footer"
+
     Drupal\MinkExtension:
-      base_url: http://localhost:80
-      goutte: ~
+      base_url: http://behat_drupal.lndo.site/
+      selenium2:
+        browser: chrome
+        wd_host: http://selenium:4444/wd/hub
+        capabilities:
+          browser: "chrome"
+          version: "*"
+          marionette: true
+          extra_capabilities:
+            chromeOptions:
+              args:
+                - "--start-fullscreen"
+              w3c: false
 
